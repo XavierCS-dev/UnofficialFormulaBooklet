@@ -1,0 +1,147 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[latin1]{inputenc}
+\title{Mathematics Foundation of Computer Science\newline Formula Booklet}
+\author{Students of MLFCS 2021}
+\begin{document}
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+\section{Ring Laws}
+\subsection{Ring Laws}
+\begin{math}a+0=a\quad a\times1=a\quad\quad\end{math} \raggedright (Neutral elements)\newline\newline
+\begin{math}a+b=b+a\quad a\times b=b\times a\quad\quad\end{math} (Commutativity)\newline\newline
+\begin{math}a+(b+c)=(a+b)+c\quad \newline a\times (b\times c)=(a\times b)\times c\quad\quad \end{math}
+(Distributivity)\newline\newline
+\begin{math}a\times 0 = 0\quad\quad\end{math} (Annihilation)\newline\newline
+\subsection{Cancellation Laws}
+\begin{math}a+c=b+c\ \ \Rightarrow\ \ a=b\newline\newline
+a\times c = b\times c\ \ \Rightarrow\ \ a=b,\ \ c\neq 0\end{math}\newpage
+\section{Sets}
+\begin{math}\left [ A\backslash B\right ]:\end{math} Set A without elements shared with B\newline
+\newline
+\begin{math}
+A=\left \{ a,b \right \},\quad B=\left \{ 1,2 \right \},\quad A\times B=\left \{ \left ( a,1 \right ),\left ( a,2 \right ),\left ( b,1 \right ),\left ( b,2 \right )  \right \}
+\end{math}\newline\newline
+\begin{math}\left | A \right |:\end{math} Cardinality of A\newpage
+\section{Relations}
+\subsection{Relations}
+Graph: Binary relation \begin{math}R\subseteq A^{2}\end{math} on a single set\newline\newline
+Vertices: Elements of A\newline\newline
+Edges: Elements of R\newline\newline
+\begin{math}A^{2}:\ A\times A\end{math}\newline\newline
+Reflexivity: \begin{math}\left ( x,x \right )\in R\end{math}\newline\newline
+Irreflexive: \begin{math}\forall x \in A. \left ( x,x \right )\notin R\end{math}\newline\newline
+Reflexive-closure: \begin{math}R\cup \left \{ \left ( x,y \right )\in A^{2}\ |\ x=y \right \}\subseteq A^{2}\end{math}\newline\newline
+Symmetry: \begin{math}\forall \left ( x,y \right )\in A^{2}. \ \left ( x,y \right )\in R \Rightarrow (y,x)\in R\end{math}\newline\newline
+Anti-symmetry: \begin{math}\forall x \in A. \left ( x,y \right )\in R \wedge \left ( y,x \right )\in R \Rightarrow x=y\end{math}\newline\newline
+Symmetric-enclosure: \begin{math}\left \{ \left ( a,b \right ), \left ( b,a \right ), \left ( a,c \right ), \left ( c,a \right ),... \right \}\end{math}\newline\newline
+Transitivity: \begin{math}\forall x,y,z\in A.\ \left ( x,y \right )\in R\ \wedge\ \left ( y,z \right )\in R\Rightarrow \left ( x,z \right ) \in R\end{math}\newline\newline
+Transitive-closure: \begin{math}R\cup R;\ R\cup R;\ R;\ R\cup R;\ R;\ R\cup R...\end{math}\newline\newline
+Transitive-closure: ``All R Paths'' \newline\newline
+Order Relation: When \begin{math}R\subseteq A^{2}\end{math} is Reflexive, Anti-Symmetric and Transitive\newline\newline
+Equivalence Relation: Reflexive, Symmetric, Transitive\newline\newline
+Equivalence Class: Set of \begin{math}\in A\end{math} which are all \begin{math}\in\end{math} equivalence closure\newpage
+\section{Functions}
+\subsection{Function Requirements}
+Definedness: \begin{math}\forall a \in A\ \exists b \in B.\ \left ( a,b \right )\in R\end{math}\newline\newline
+Single-valuedness: \begin{math}\forall a \in A\ \forall b,b' \in B.\  \left ( a,b \right )\in B\ \wedge\ \left ( a,b' \right )\in R\Rightarrow b=b'\end{math}\newline\newline
+\subsection{Properties}
+Range / Image: \begin{math}\left \{ b \in B\ |\ \exists a \in A.\ \left ( a,b \right ) \in R \right \}\subseteq B\end{math}\newline\newline
+Injectivity: \begin{math}\forall a,a'\in A.\ a\neq a' \Rightarrow f\left ( a \right )\neq f\left ( b \right )\end{math}\newline\newline
+Surjectivity: \begin{math}\forall b \in B\ \exists a \in A.\ f\left ( a \right )=b\end{math}\newline\newline
+Bijectivity: \begin{math}|F^{-1}\left [ \left \{ b \right \} \right ]| = 1\end{math}\newline\newline
+Bijectivity: Injective And Surjective Simultaneously\newline\newline
+Forward Image: \begin{math}F\left [ X \right ]=\left \{ b\in B\ |\ \exists a \in X.\ f\left ( a \right )=b \right \}\end{math}\newline\newline
+Backward Image: \begin{math}F^{-1}\left [ Y \right ]=\left \{ a\in A\ |\ f\left ( a \right )\in Y \right \}\end{math}\newline\newline
+\begin{math}F\bar{\left [ X \right ]}:\end{math} Compliment of pre-image\newline\newline
+\begin{math}F\overline{\left [X \right ]}:\end{math} Compliment of forward-image\newline\newline
+Everywhere defined: All of A is the pre-image\newpage
+\section{The Inner Product}
+\subsection{Conversions}
+Linear Equation To Parametric:\newline\newline
+\begin{math}
+\ x_{1}=d+bx_{2}+cx_{3}...\Rightarrow
+\left ( \begin{matrix}
+d\\0\\0\\...\\...
+\end{matrix} \right )+x_{2}\cdot
+\left ( \begin{matrix}
+b\\1\\0\\...\\...
+\end{matrix} \right )+x_{3}\cdot
+\left ( \begin{matrix}
+c\\0\\1\\...\\...
+\end{matrix} \right )+...+x_{n}\cdot
+\left ( \begin{matrix}
+n^{th}\ co-eff\\...\\...\\...\\1
+\end{matrix} \right )
+\end{math}\newline\newline\newline
+Parametric to linear (line):\newline
+\begin{math}
+ax_{1}+bx_{2}=d\newline
+a=-v_{2}\newline
+b=v_{1}\newline
+d=-v_{2}p_{1}+v_{1}p_{2}
+\end{math}\newline\newline
+Parametric to linear (plane):\newline
+\begin{math}
+ax_{1}+bx_{2}+cx_{3}=d\newline
+a=v_{2}w_{3}-v_{3}w_{2}\newline
+b=v_{3}w_{1}-v_{1}w_{3}\newline
+c=v_{1}w_{2}-v_{2}w_{1}\newline
+d=ap_{1}+bp_{2}+cp_{3}
+\end{math}\newpage
+\subsection{Inner Product}
+\begin{math}
+\left \langle \vec{v},\vec{w} \right \rangle:\ v_{1}\times w_{1}+v_{2}\times w_{2}+...+v_{n}\times w_{n}\newline\newline
+\left \langle \vec{v} + \vec{w}, \vec{u} \right \rangle:\ \left \langle \vec{v}, \vec{u} \right \rangle + \left \langle \vec{w}, \vec{u} \right \rangle\newline\newline
+\left \langle s\cdot \vec{v},\vec{w} \right \rangle:\ s\cdot \left \langle \vec{v},\vec{w} \right \rangle\newline\newline
+\left \langle \vec{v},\vec{w} \right \rangle:\ \left | \vec{v} \right |\times\left | \vec{w} \right |\times\cos a \newline\newline
+Orthogonal\ Test:\ \left \langle \vec{v},\vec{w} \right \rangle=0\newline\newline
+\left \langle \vec{v},\vec{v} \right \rangle:\ \left | \vec{v} \right |^{2}\newline\newline
+\left | \vec{v} \right |:\ \sqrt{\left \langle \vec{v},\vec{v} \right \rangle}\newline\newline
+\end{math}
+\subsection{Geometry}
+\begin{math}
+\vec{n}:\ \left ( \begin{matrix} a\\ b\\ c\end{matrix} \right )
+\end{math}\newline\newline\newline
+\begin{math}\frac{d}{\left |\vec{n}  \right |}\end{math}: Distance from origin\newline\newline
+\begin{math}\left \langle \vec{n},X \right \rangle = d = \left \langle \vec{n},P \right \rangle\end{math} where $X$: Arbitrary Point, $P$: Point on the line\newline\newline
+Projection of line $\vec{v}$ on line $\vec{n}$: \begin{math}\frac{\left \langle \vec{n}, \vec{v} \right \rangle}{\left \langle \vec{n},\vec{n} \right \rangle}\times \vec{n}\end{math}\newline\newline
+Distance of Point $Q$ to line $P$:\newline
+\begin{math}
+\frac{\left \langle P,\vec{n} \right \rangle - \left \langle Q,\vec{n} \right \rangle}{\left | \vec{n} \right |}=\frac{d-\left \langle \vec{n}, Q \right \rangle}{\left | \vec{n} \right |}=
+\frac{\left \langle \vec{n}, \vec{QP} \right \rangle}{\left | \vec{n} \right |}\newline\newline
+Q':Q+\frac{d-\left \langle \vec{n},Q \right \rangle}{\left \langle \vec{n},\vec{n} \right \rangle}\cdot \vec{n}\newline\newline
+Q'': Q+2\times\frac{d-\left \langle \vec{n},Q \right \rangle}{\left \langle \vec{n},\vec{n} \right \rangle}\cdot \vec{n}
+\end{math}\newpage
+\section{Bases}
+\subsection{Bases}
+Linear Combinations:\newline\newline
+\begin{math}\left (\sum_{i=1}^{n}a_{i}\cdot\vec{v_{i}}  \right )+\left (\sum_{i=1}^{n}b_{i}\cdot\vec{v_{i}}  \right )=\sum_{i=1}^{n}\left ( a_{i}+b_{i} \right )\cdot\vec{v_{i}}\newline\newline
+s\cdot \left ( \sum_{i=1}^{n}a_{i}\cdot \vec{v_{i}} \right )=\sum_{i=1}^{n}\left ( s\times a_{i} \right )\cdot\vec{v_{i}}\end{math}\newline\newline
+Theorem 8 for linear independence:\newline
+\begin{math}
+\sum_{i=1}^{n}a_{i}\cdot\vec{v_{i}}=\vec{0}\Rightarrow a_{1}=a_{2}=a_{3}=...=0
+\end{math}\newline\newline
+Value of particular co-efficient (coordinates):\newline
+\begin{math}
+a_{k}=\frac{\left \langle \vec{w_{k}},\vec{v_{k}} \right \rangle}{\left \langle \vec{v_{k}},\vec{v_{k}} \right \rangle}
+\end{math}\newline\newline
+Orthonormal: \begin{math}\left \langle \vec{v},\vec{v} \right \rangle=1\end{math}\newline\newline
+Positive definite:\newline
+\begin{math}
+\left \langle \vec{v},\vec{v} \right \rangle\geq 0\newline
+\left \langle \vec{v},\vec{v} \right \rangle=0\Rightarrow \vec{v}=\vec{0}
+\end{math}\newline\newline
+Computing Orthogonal bases from bases:\newline
+\begin{math}
+\vec{w_{1}}=\vec{v_{1}}\newline
+\vec{w_{2}}=\vec{v_{2}}-\frac{\left \langle \vec{v_{2}},\vec{w_{1}} \right \rangle}{\left \langle \vec{w_{1}},\vec{w_{1}} \right \rangle}\cdot\vec{w_{1}}\newline
+\vec{w_{3}}=\vec{v_{3}}-\frac{\left \langle \vec{v_{3}},\vec{w_{1}} \right \rangle}{\left \langle \vec{w_{1}},\vec{w_{1}} \right \rangle}\cdot\vec{w_{1}}-\frac{\left \langle \vec{v_{3}},\vec{w_{2}} \right \rangle}{\left \langle \vec{w_{2}},\vec{w_{2}} \right \rangle}\cdot\vec{w_{2}}
+\end{math}\newline\newline
+and so on...
+
+\end{document}
